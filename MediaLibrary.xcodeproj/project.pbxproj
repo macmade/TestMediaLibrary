@@ -14,7 +14,6 @@
 		051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472F11B9F59D600C0A072 /* MainWindowController.m */; settings = {ASSET_TAGS = (); }; };
 		051472F51B9F5A6E00C0A072 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472F31B9F5A6E00C0A072 /* MainWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		051472FA1B9F5BC400C0A072 /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051472F91B9F5BC400C0A072 /* iTunesLibrary.framework */; };
-		051473191B9F9C3800C0A072 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 051473181B9F9C3700C0A072 /* README.md */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,7 +173,6 @@
 			files = (
 				051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */,
 				051472DC1B9F587100C0A072 /* main.m in Sources */,
-				051473191B9F9C3800C0A072 /* README.md in Sources */,
 				051472EE1B9F59C100C0A072 /* ApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

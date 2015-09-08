@@ -31,9 +31,9 @@
 @property( atomic, readwrite, strong ) NSArray * artists;
 @property( atomic, readwrite, strong ) NSArray * albums;
 
-@property( atomic, readwrite, weak ) IBOutlet NSArrayController * tracksController;
-@property( atomic, readwrite, weak ) IBOutlet NSArrayController * artistsController;
-@property( atomic, readwrite, weak ) IBOutlet NSArrayController * albumsController;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController * tracksController;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController * artistsController;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController * albumsController;
 
 - ( NSArray * )uniqueArtists: ( NSArray * )tracks;
 - ( NSArray * )uniqueAlbums:  ( NSArray * )tracks;
