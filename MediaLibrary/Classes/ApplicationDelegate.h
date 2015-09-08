@@ -24,11 +24,7 @@
 
 @import Cocoa;
 
-@class MainWindowController;
-
 @interface ApplicationDelegate: NSObject < NSApplicationDelegate >
-
-@property( atomic, readonly ) MainWindowController * mainWindowController;
 
 @end
 

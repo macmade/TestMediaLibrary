@@ -35,8 +35,7 @@
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * artistsController;
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * albumsController;
 
-- ( NSArray * )uniqueArtists: ( NSArray * )tracks;
-- ( NSArray * )uniqueAlbums:  ( NSArray * )tracks;
+- ( NSArray * )uniqueValue: ( NSString * )key inArray: ( NSArray * )array;
 
 @end
 
@@ -44,10 +43,7 @@
 
 - ( id )init
 {
-    if( ( self = [ super initWithWindowNibName: @"MainWindow" ] ) )
-    {}
-    
-    return self;
+    return [ super initWithWindowNibName: @"MainWindow" ];
 }
 
 - ( void )windowDidLoad
@@ -60,8 +56,8 @@
     library        = [ NSDictionary dictionaryWithContentsOfFile: [ @"~/Music/iTunes/iTunes Music Library.xml" stringByStandardizingPath ] ];
     self.allTracks = ( ( NSDictionary * )library[ @"Tracks" ] ).allValues;
     self.tracks    = self.allTracks;
-    self.artists   = [ self uniqueArtists: self.tracks ];
-    self.albums    = [ self uniqueAlbums:  self.tracks ];
+    self.artists   = [ self uniqueValue: @"Artist" inArray: self.tracks ];
+    self.albums    = [ self uniqueValue: @"Album"  inArray: self.tracks ];
     
     [ self.artistsController setSortDescriptors: @[ [ NSSortDescriptor sortDescriptorWithKey: @"description" ascending: YES ] ] ];
     [ self.albumsController  setSortDescriptors: @[ [ NSSortDescriptor sortDescriptorWithKey: @"description" ascending: YES ] ] ];
@@ -79,38 +75,19 @@
     self.window.title = title;
 }
 
-- ( NSArray * )uniqueArtists: ( NSArray * )tracks
+- ( NSArray * )uniqueValue: ( NSString * )key inArray: ( NSArray * )array
 {
     NSMutableSet * set;
-    NSDictionary * track;
-    NSString     * artist;
+    NSDictionary * dict;
+    NSString     * value;
     
     set = [ NSMutableSet new ];
     
-    for( track in tracks )
+    for( dict in array )
     {
-        if( ( artist = track[ @"Artist" ] ) )
+        if( ( value = dict[ key ] ) )
         {
-            [ set addObject: artist ];
-        }
-    }
-    
-    return set.allObjects;
-}
-
-- ( NSArray * )uniqueAlbums:  ( NSArray * )tracks
-{
-    NSMutableSet * set;
-    NSDictionary * track;
-    NSString     * album;
-    
-    set = [ NSMutableSet new ];
-    
-    for( track in tracks )
-    {
-        if( ( album = track[ @"Album" ] ) )
-        {
-            [ set addObject: album ];
+            [ set addObject: value ];
         }
     }
     
@@ -173,7 +150,7 @@
     if( [ tableView.identifier isEqualToString: @"Artists" ] )
     {
         self.tracks = [ self.allTracks filteredArrayUsingPredicate: [ NSPredicate predicateWithBlock: artistFilter ] ];
-        self.albums = [ self uniqueAlbums: self.tracks ];
+        self.albums = [ self uniqueValue: @"Album"  inArray: self.tracks ];
         
         self.albumsController.selectionIndexes = [ NSIndexSet indexSet ];
         self.tracksController.selectionIndexes = [ NSIndexSet indexSet ];

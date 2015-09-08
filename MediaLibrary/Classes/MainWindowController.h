@@ -26,6 +26,4 @@
 
 @interface MainWindowController: NSWindowController
 
-@property( atomic, readonly ) NSArray * tracks;
-
 @end
