@@ -210,7 +210,7 @@
                                     <rect key="frame" x="1" y="0.0" width="798" height="301"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="cgk-NX-IPD" viewBased="YES" id="gNQ-QT-YCL">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveName="Tracks" rowSizeStyle="automatic" headerView="cgk-NX-IPD" viewBased="YES" id="gNQ-QT-YCL">
                                             <rect key="frame" x="0.0" y="0.0" width="798" height="278"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
