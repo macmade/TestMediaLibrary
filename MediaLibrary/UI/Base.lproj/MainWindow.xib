@@ -29,18 +29,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <subviews>
                             <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" id="a2V-Np-1Gc">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="288"/>
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="VxF-Kx-mwW">
-                                        <rect key="frame" x="0.0" y="0.0" width="395" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="395" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" id="3RL-hG-v1S">
-                                            <rect key="frame" x="1" y="0.0" width="393" height="287"/>
+                                            <rect key="frame" x="1" y="0.0" width="393" height="199"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView identifier="Artists" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="qAa-ai-e4h" viewBased="YES" id="PLt-md-eTq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="176"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -115,14 +115,14 @@
                                         </tableHeaderView>
                                     </scrollView>
                                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="U5I-r0-G5y">
-                                        <rect key="frame" x="405" y="0.0" width="395" height="288"/>
+                                        <rect key="frame" x="405" y="0.0" width="395" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" id="eX8-Pi-1w4">
-                                            <rect key="frame" x="1" y="0.0" width="393" height="287"/>
+                                            <rect key="frame" x="1" y="0.0" width="393" height="199"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView identifier="Albums" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="q31-J5-G6f" viewBased="YES" id="zSU-sZ-hMN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="176"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -204,14 +204,14 @@
                                 </holdingPriorities>
                             </splitView>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="2mH-24-TLF">
-                                <rect key="frame" x="0.0" y="298" width="800" height="302"/>
+                                <rect key="frame" x="0.0" y="210" width="800" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" id="uqE-UR-Uix">
-                                    <rect key="frame" x="1" y="0.0" width="798" height="301"/>
+                                    <rect key="frame" x="1" y="0.0" width="798" height="389"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveName="Tracks" rowSizeStyle="automatic" headerView="cgk-NX-IPD" viewBased="YES" id="gNQ-QT-YCL">
-                                            <rect key="frame" x="0.0" y="0.0" width="798" height="278"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="798" height="366"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>
