@@ -13,7 +13,6 @@
 		051472EF1B9F59C100C0A072 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472EC1B9F59C100C0A072 /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
 		051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472F11B9F59D600C0A072 /* MainWindowController.m */; settings = {ASSET_TAGS = (); }; };
 		051472F51B9F5A6E00C0A072 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472F31B9F5A6E00C0A072 /* MainWindow.xib */; settings = {ASSET_TAGS = (); }; };
-		051472FA1B9F5BC400C0A072 /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051472F91B9F5BC400C0A072 /* iTunesLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		051472F01B9F59D600C0A072 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		051472F11B9F59D600C0A072 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		051472F41B9F5A6E00C0A072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		051472F91B9F5BC400C0A072 /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = ../../../../Library/Frameworks/iTunesLibrary.framework; sourceTree = "<group>"; };
 		051473181B9F9C3700C0A072 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051472FA1B9F5BC400C0A072 /* iTunesLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +45,6 @@
 			children = (
 				051473181B9F9C3700C0A072 /* README.md */,
 				051472D61B9F587100C0A072 /* MediaLibrary */,
-				051472F91B9F5BC400C0A072 /* iTunesLibrary.framework */,
 				051472D51B9F587100C0A072 /* Products */,
 			);
 			sourceTree = "<group>";
