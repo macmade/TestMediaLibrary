@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="MediaLibrary" customModuleProvider="target">
             <connections>
                 <outlet property="albumsController" destination="T5G-OL-7ym" id="drO-d9-fcV"/>
                 <outlet property="artistsController" destination="BY0-hj-GSi" id="sau-s7-5qx"/>
@@ -47,7 +46,7 @@
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="381" minWidth="40" maxWidth="1000" id="ImG-yp-rIA">
+                                                        <tableColumn width="352" minWidth="40" maxWidth="1000" id="ImG-yp-rIA">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Artist">
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -61,7 +60,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="B65-Ud-ml0">
-                                                                    <rect key="frame" x="1" y="1" width="390" height="17"/>
+                                                                    <rect key="frame" x="11" y="1" width="361" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rng-P2-LOM">
@@ -120,7 +119,7 @@
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="381" minWidth="40" maxWidth="1000" id="qRQ-OH-Iag">
+                                                        <tableColumn width="352" minWidth="40" maxWidth="1000" id="qRQ-OH-Iag">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Album">
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -134,7 +133,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="Qbb-hH-dEH">
-                                                                    <rect key="frame" x="1" y="1" width="390" height="17"/>
+                                                                    <rect key="frame" x="11" y="1" width="361" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OD2-M5-lHZ">
@@ -199,7 +198,7 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="260" minWidth="40" maxWidth="1000" id="VwC-zS-pcw">
+                                                <tableColumn width="250.5" minWidth="40" maxWidth="1000" id="VwC-zS-pcw">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Title">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -213,7 +212,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="H9C-fb-x5G">
-                                                            <rect key="frame" x="1" y="1" width="265" height="17"/>
+                                                            <rect key="frame" x="11" y="1" width="256" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dF1-AY-i5x">
@@ -238,7 +237,7 @@
                                                         <binding destination="UCQ-zN-uCK" name="value" keyPath="arrangedObjects" id="liu-4O-fQD"/>
                                                     </connections>
                                                 </tableColumn>
-                                                <tableColumn width="260" minWidth="40" maxWidth="1000" id="Cca-fC-26t">
+                                                <tableColumn width="250.5" minWidth="40" maxWidth="1000" id="Cca-fC-26t">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Album">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -252,7 +251,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="kdG-R8-fkP">
-                                                            <rect key="frame" x="269" y="1" width="260" height="17"/>
+                                                            <rect key="frame" x="269.5" y="1" width="250" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyv-9J-Cv6">
@@ -277,7 +276,7 @@
                                                         <binding destination="UCQ-zN-uCK" name="value" keyPath="arrangedObjects" id="D5u-Ah-Q0E"/>
                                                     </connections>
                                                 </tableColumn>
-                                                <tableColumn width="260" minWidth="40" maxWidth="1000" id="AIF-Aq-Muk">
+                                                <tableColumn width="250.5" minWidth="40" maxWidth="1000" id="AIF-Aq-Muk">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Artist">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -291,7 +290,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="ESp-bo-CU7">
-                                                            <rect key="frame" x="532" y="1" width="264" height="17"/>
+                                                            <rect key="frame" x="523" y="1" width="255" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eo1-f7-I4b">
@@ -354,17 +353,17 @@
             </view>
             <point key="canvasLocation" x="139" y="144"/>
         </window>
-        <arrayController editable="NO" id="UCQ-zN-uCK" userLabel="Tracks Array Controller">
+        <arrayController editable="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="UCQ-zN-uCK" userLabel="Tracks Array Controller">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="tracks" id="SSu-GC-4MT"/>
             </connections>
         </arrayController>
-        <arrayController editable="NO" id="BY0-hj-GSi" userLabel="Artists Array Controller">
+        <arrayController editable="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="BY0-hj-GSi" userLabel="Artists Array Controller">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="artists" id="Fi9-az-P2g"/>
             </connections>
         </arrayController>
-        <arrayController editable="NO" id="T5G-OL-7ym" userLabel="Albums Array Controller">
+        <arrayController editable="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="T5G-OL-7ym" userLabel="Albums Array Controller">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="albums" id="aqs-Kw-aba"/>
             </connections>

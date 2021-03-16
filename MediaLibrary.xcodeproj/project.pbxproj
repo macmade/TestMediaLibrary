@@ -8,19 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		05092EEE2600CAA600C0BBEB /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05092EEA2600C9FD00C0BBEB /* iTunesLibrary.framework */; };
-		05092F172600CE1100C0BBEB /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 05092F162600CE1100C0BBEB /* Track.m */; };
-		051472DC1B9F587100C0A072 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472DB1B9F587100C0A072 /* main.m */; };
-		051472DE1B9F587100C0A072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 051472DD1B9F587100C0A072 /* Assets.xcassets */; };
-		051472EE1B9F59C100C0A072 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472EA1B9F59C100C0A072 /* ApplicationDelegate.m */; };
+		05092F6B2600ECC000C0BBEB /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05092F6A2600ECC000C0BBEB /* ApplicationDelegate.swift */; };
+		05092F702600ED1300C0BBEB /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05092F6F2600ED1300C0BBEB /* Track.swift */; };
+		05092F742600EDEE00C0BBEB /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05092F732600EDEE00C0BBEB /* MainWindowController.swift */; };
 		051472EF1B9F59C100C0A072 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472EC1B9F59C100C0A072 /* MainMenu.xib */; };
-		051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472F11B9F59D600C0A072 /* MainWindowController.m */; };
-		051472F51B9F5A6E00C0A072 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472F31B9F5A6E00C0A072 /* MainWindow.xib */; };
+		051472F51B9F5A6E00C0A072 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472F31B9F5A6E00C0A072 /* MainWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05092EEA2600C9FD00C0BBEB /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = System/Library/Frameworks/iTunesLibrary.framework; sourceTree = SDKROOT; };
-		05092F152600CE1100C0BBEB /* Track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
-		05092F162600CE1100C0BBEB /* Track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		05092F2F2600EBAB00C0BBEB /* Release - ccache.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release - ccache.xcconfig"; sourceTree = "<group>"; };
 		05092F302600EBAB00C0BBEB /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		05092F312600EBAB00C0BBEB /* Debug - ccache.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug - ccache.xcconfig"; sourceTree = "<group>"; };
@@ -65,16 +61,13 @@
 		05092F602600EBAB00C0BBEB /* ccache-config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "ccache-config.sh"; sourceTree = "<group>"; };
 		05092F612600EBAB00C0BBEB /* ccache.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ccache.sh; sourceTree = "<group>"; };
 		05092F622600EBAB00C0BBEB /* Debug - zld.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug - zld.xcconfig"; sourceTree = "<group>"; };
+		05092F6A2600ECC000C0BBEB /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
+		05092F6F2600ED1300C0BBEB /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		05092F732600EDEE00C0BBEB /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		051472D41B9F587100C0A072 /* MediaLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		051472DB1B9F587100C0A072 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		051472DD1B9F587100C0A072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		051472E21B9F587100C0A072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		051472E91B9F59C100C0A072 /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
-		051472EA1B9F59C100C0A072 /* ApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
 		051472ED1B9F59C100C0A072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		051472F01B9F59D600C0A072 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
-		051472F11B9F59D600C0A072 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
-		051472F41B9F5A6E00C0A072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		051472F41B9F5A6E00C0A072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
 		051473181B9F9C3700C0A072 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,9 +239,7 @@
 		051472DA1B9F587100C0A072 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				051472DD1B9F587100C0A072 /* Assets.xcassets */,
 				051472E21B9F587100C0A072 /* Info.plist */,
-				051472DB1B9F587100C0A072 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,12 +247,9 @@
 		051472E81B9F59C100C0A072 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				051472E91B9F59C100C0A072 /* ApplicationDelegate.h */,
-				051472EA1B9F59C100C0A072 /* ApplicationDelegate.m */,
-				051472F01B9F59D600C0A072 /* MainWindowController.h */,
-				051472F11B9F59D600C0A072 /* MainWindowController.m */,
-				05092F152600CE1100C0BBEB /* Track.h */,
-				05092F162600CE1100C0BBEB /* Track.m */,
+				05092F6A2600ECC000C0BBEB /* ApplicationDelegate.swift */,
+				05092F6F2600ED1300C0BBEB /* Track.swift */,
+				05092F732600EDEE00C0BBEB /* MainWindowController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -270,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				051472EC1B9F59C100C0A072 /* MainMenu.xib */,
-				051472F31B9F5A6E00C0A072 /* MainWindow.xib */,
+				051472F31B9F5A6E00C0A072 /* MainWindowController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -306,6 +294,7 @@
 				TargetAttributes = {
 					051472D31B9F587100C0A072 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 1240;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -333,9 +322,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051472DE1B9F587100C0A072 /* Assets.xcassets in Resources */,
 				051472EF1B9F59C100C0A072 /* MainMenu.xib in Resources */,
-				051472F51B9F5A6E00C0A072 /* MainWindow.xib in Resources */,
+				051472F51B9F5A6E00C0A072 /* MainWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,10 +334,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */,
-				051472DC1B9F587100C0A072 /* main.m in Sources */,
-				051472EE1B9F59C100C0A072 /* ApplicationDelegate.m in Sources */,
-				05092F172600CE1100C0BBEB /* Track.m in Sources */,
+				05092F6B2600ECC000C0BBEB /* ApplicationDelegate.swift in Sources */,
+				05092F702600ED1300C0BBEB /* Track.swift in Sources */,
+				05092F742600EDEE00C0BBEB /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,12 +351,12 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		051472F31B9F5A6E00C0A072 /* MainWindow.xib */ = {
+		051472F31B9F5A6E00C0A072 /* MainWindowController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				051472F41B9F5A6E00C0A072 /* Base */,
 			);
-			name = MainWindow.xib;
+			name = MainWindowController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -400,20 +387,25 @@
 		051472E61B9F587100C0A072 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MediaLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.MediaLibrary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		051472E71B9F587100C0A072 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MediaLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.MediaLibrary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2014 Jean-David Gadina - www-xs-labs.com
+ * Copyright (c) 2021 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,19 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-@import Cocoa;
+import Foundation
+import iTunesLibrary
 
-@interface MainWindowController: NSWindowController
-
-@end
+@objc class Track: NSObject
+{
+    @objc public private( set ) var title:  String
+    @objc public private( set ) var album:  String
+    @objc public private( set ) var artist: String
+    
+    @objc init( item: ITLibMediaItem )
+    {
+        self.title  = item.title
+        self.album  = item.album.title  ?? ""
+        self.artist = item.artist?.name ?? ""
+    }
+}
