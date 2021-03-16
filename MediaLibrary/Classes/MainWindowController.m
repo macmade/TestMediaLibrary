@@ -94,7 +94,7 @@
     }
 }
 
-- ( NSArray< NSString * > * )uniqueValue: ( NSString * )keypath inArray: ( NSArray< ITLibMediaItem * > * )array
+- ( NSArray< NSString * > * )uniqueValue: ( NSString * )keypath inArray: ( NSArray< Track * > * )array
 {
     NSMutableSet   * set;
     ITLibMediaItem * media;
