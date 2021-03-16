@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05092EEE2600CAA600C0BBEB /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05092EEA2600C9FD00C0BBEB /* iTunesLibrary.framework */; };
+		05092F172600CE1100C0BBEB /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 05092F162600CE1100C0BBEB /* Track.m */; };
 		051472DC1B9F587100C0A072 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472DB1B9F587100C0A072 /* main.m */; };
 		051472DE1B9F587100C0A072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 051472DD1B9F587100C0A072 /* Assets.xcassets */; };
-		051472EE1B9F59C100C0A072 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472EA1B9F59C100C0A072 /* ApplicationDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		051472EF1B9F59C100C0A072 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472EC1B9F59C100C0A072 /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
-		051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472F11B9F59D600C0A072 /* MainWindowController.m */; settings = {ASSET_TAGS = (); }; };
-		051472F51B9F5A6E00C0A072 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472F31B9F5A6E00C0A072 /* MainWindow.xib */; settings = {ASSET_TAGS = (); }; };
+		051472EE1B9F59C100C0A072 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472EA1B9F59C100C0A072 /* ApplicationDelegate.m */; };
+		051472EF1B9F59C100C0A072 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472EC1B9F59C100C0A072 /* MainMenu.xib */; };
+		051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051472F11B9F59D600C0A072 /* MainWindowController.m */; };
+		051472F51B9F5A6E00C0A072 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051472F31B9F5A6E00C0A072 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05092EEA2600C9FD00C0BBEB /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = System/Library/Frameworks/iTunesLibrary.framework; sourceTree = SDKROOT; };
+		05092F152600CE1100C0BBEB /* Track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		05092F162600CE1100C0BBEB /* Track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		051472D41B9F587100C0A072 /* MediaLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		051472DB1B9F587100C0A072 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		051472DD1B9F587100C0A072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,18 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05092EEE2600CAA600C0BBEB /* iTunesLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05092EE92600C9FD00C0BBEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05092EEA2600C9FD00C0BBEB /* iTunesLibrary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		051472CB1B9F587100C0A072 = {
 			isa = PBXGroup;
 			children = (
 				051473181B9F9C3700C0A072 /* README.md */,
 				051472D61B9F587100C0A072 /* MediaLibrary */,
 				051472D51B9F587100C0A072 /* Products */,
+				05092EE92600C9FD00C0BBEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +99,8 @@
 				051472EA1B9F59C100C0A072 /* ApplicationDelegate.m */,
 				051472F01B9F59D600C0A072 /* MainWindowController.h */,
 				051472F11B9F59D600C0A072 /* MainWindowController.m */,
+				05092F152600CE1100C0BBEB /* Track.h */,
+				05092F162600CE1100C0BBEB /* Track.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -136,6 +153,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -170,6 +188,7 @@
 				051472F21B9F59D600C0A072 /* MainWindowController.m in Sources */,
 				051472DC1B9F587100C0A072 /* main.m in Sources */,
 				051472EE1B9F59C100C0A072 /* ApplicationDelegate.m in Sources */,
+				05092F172600CE1100C0BBEB /* Track.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +420,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-				);
 				INFOPLIST_FILE = MediaLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.MediaLibrary";
@@ -417,10 +432,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-				);
 				INFOPLIST_FILE = MediaLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.MediaLibrary";

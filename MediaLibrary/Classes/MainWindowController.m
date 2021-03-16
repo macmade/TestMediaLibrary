@@ -23,19 +23,22 @@
  ******************************************************************************/
 
 #import "MainWindowController.h"
+#import "Track.h"
+
+@import iTunesLibrary;
 
 @interface MainWindowController() < NSTableViewDelegate >
 
-@property( atomic, readwrite, strong ) NSArray * allTracks;
-@property( atomic, readwrite, strong ) NSArray * tracks;
-@property( atomic, readwrite, strong ) NSArray * artists;
-@property( atomic, readwrite, strong ) NSArray * albums;
+@property( atomic, readwrite, strong ) NSArray< Track    * > * allTracks;
+@property( atomic, readwrite, strong ) NSArray< Track    * > * tracks;
+@property( atomic, readwrite, strong ) NSArray< NSString * > * artists;
+@property( atomic, readwrite, strong ) NSArray< NSString * > * albums;
 
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * tracksController;
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * artistsController;
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * albumsController;
 
-- ( NSArray * )uniqueValue: ( NSString * )key inArray: ( NSArray * )array;
+- ( NSArray< NSString * > * )uniqueValue: ( NSString * )keypath inArray: ( NSArray< Track * > * )array;
 
 @end
 
@@ -48,47 +51,68 @@
 
 - ( void )windowDidLoad
 {
-    NSDictionary * library;
-    NSString     * title;
+    NSError   * error;
+    ITLibrary * library;
+    NSString  * title;
     
     [ super windowDidLoad ];
     
-    library        = [ NSDictionary dictionaryWithContentsOfFile: [ @"~/Music/iTunes/iTunes Music Library.xml" stringByStandardizingPath ] ];
-    self.allTracks = ( ( NSDictionary * )library[ @"Tracks" ] ).allValues;
-    self.tracks    = self.allTracks;
-    self.artists   = [ self uniqueValue: @"Artist" inArray: self.tracks ];
-    self.albums    = [ self uniqueValue: @"Album"  inArray: self.tracks ];
+    library = [ ITLibrary libraryWithAPIVersion: @"1.0" error: &error ];
     
-    [ self.artistsController setSortDescriptors: @[ [ NSSortDescriptor sortDescriptorWithKey: @"description" ascending: YES ] ] ];
-    [ self.albumsController  setSortDescriptors: @[ [ NSSortDescriptor sortDescriptorWithKey: @"description" ascending: YES ] ] ];
-    [ self.tracksController  setSortDescriptors:
-        @[
-            [ NSSortDescriptor sortDescriptorWithKey: @"Artist" ascending: YES ],
-            [ NSSortDescriptor sortDescriptorWithKey: @"Album"  ascending: YES ],
-            [ NSSortDescriptor sortDescriptorWithKey: @"Name"   ascending: YES ]
-        ]
-    ];
-    
-    self.artistsController.selectionIndexes = [ NSIndexSet indexSet ];
-    
-    title             = [ self.window.title stringByAppendingString: [ NSString stringWithFormat: @" (%lu tracks)", self.allTracks.count ] ];
-    self.window.title = title;
+    if( library == nil || error != nil )
+    {
+        NSLog( @"%@", error );
+    }
+    else
+    {
+        NSMutableArray< Track * > * tracks = [ NSMutableArray new ];
+        
+        for( ITLibMediaItem * item in library.allMediaItems )
+        {
+            [ tracks addObject: [ [ Track alloc ] initWithItem: item ] ];
+        }
+        
+        self.allTracks = [ tracks copy ];
+        self.tracks    = self.allTracks;
+        self.artists   = [ self uniqueValue: @"artist" inArray: self.tracks ];
+        self.albums    = [ self uniqueValue: @"album"  inArray: self.tracks ];
+        
+        [ self.artistsController setSortDescriptors: @[ [ NSSortDescriptor sortDescriptorWithKey: @"description" ascending: YES ] ] ];
+        [ self.albumsController  setSortDescriptors: @[ [ NSSortDescriptor sortDescriptorWithKey: @"description" ascending: YES ] ] ];
+        [ self.tracksController  setSortDescriptors:
+            @[
+                [ NSSortDescriptor sortDescriptorWithKey: @"artist" ascending: YES ],
+                [ NSSortDescriptor sortDescriptorWithKey: @"album"  ascending: YES ],
+                [ NSSortDescriptor sortDescriptorWithKey: @"title"  ascending: YES ]
+            ]
+        ];
+        
+        self.artistsController.selectionIndexes = [ NSIndexSet indexSet ];
+        
+        title             = [ self.window.title stringByAppendingString: [ NSString stringWithFormat: @" (%lu tracks)", self.allTracks.count ] ];
+        self.window.title = title;
+    }
 }
 
-- ( NSArray * )uniqueValue: ( NSString * )key inArray: ( NSArray * )array
+- ( NSArray< NSString * > * )uniqueValue: ( NSString * )keypath inArray: ( NSArray< ITLibMediaItem * > * )array
 {
-    NSMutableSet * set;
-    NSDictionary * dict;
-    NSString     * value;
+    NSMutableSet   * set;
+    ITLibMediaItem * media;
+    NSString       * value;
     
     set = [ NSMutableSet new ];
     
-    for( dict in array )
+    for( media in array )
     {
-        if( ( value = dict[ key ] ) )
+        @try
         {
-            [ set addObject: value ];
+            if( ( value = [ media valueForKeyPath: keypath ] ) && [ value isKindOfClass: [ NSString class ] ] )
+            {
+                [ set addObject: value ];
+            }
         }
+        @catch( NSException * e )
+        {}
     }
     
     return set.allObjects;
@@ -97,8 +121,8 @@
 - ( void )tableViewSelectionDidChange: ( NSNotification * )notification
 {
     NSTableView * tableView;
-    BOOL ( ^ artistFilter )( NSDictionary * track, NSDictionary * bindings );
-    BOOL ( ^ albumFilter  )( NSDictionary * track, NSDictionary * bindings );
+    BOOL ( ^ artistFilter )( Track * track, NSDictionary * bindings );
+    BOOL ( ^ albumFilter  )( Track * track, NSDictionary * bindings );
     
     tableView = ( NSTableView * )( notification.object );
     
@@ -107,7 +131,7 @@
         return;
     }
     
-    artistFilter = ^ BOOL ( NSDictionary * track, NSDictionary * bindings )
+    artistFilter = ^ BOOL ( Track * track, NSDictionary * bindings )
     {
         ( void )bindings;
         
@@ -118,7 +142,7 @@
         
         for( NSString * artist in self.artistsController.selectedObjects )
         {
-            if( [ track[ @"Artist" ] isEqualToString: artist ] )
+            if( [ track.artist isEqualToString: artist ] )
             {
                 return YES;
             }
@@ -127,7 +151,7 @@
         return NO;
     };
     
-    albumFilter = ^ BOOL ( NSDictionary * track, NSDictionary * bindings )
+    albumFilter = ^ BOOL ( Track * track, NSDictionary * bindings )
     {
         ( void )bindings;
         
@@ -138,7 +162,7 @@
         
         for( NSString * album in self.albumsController.selectedObjects )
         {
-            if( [ track[ @"Album" ] isEqualToString: album ] )
+            if( [ track.album isEqualToString: album ] )
             {
                 return YES;
             }
@@ -150,7 +174,7 @@
     if( [ tableView.identifier isEqualToString: @"Artists" ] )
     {
         self.tracks = [ self.allTracks filteredArrayUsingPredicate: [ NSPredicate predicateWithBlock: artistFilter ] ];
-        self.albums = [ self uniqueValue: @"Album"  inArray: self.tracks ];
+        self.albums = [ self uniqueValue: @"album"  inArray: self.tracks ];
         
         self.albumsController.selectionIndexes = [ NSIndexSet indexSet ];
         self.tracksController.selectionIndexes = [ NSIndexSet indexSet ];
@@ -158,7 +182,7 @@
     else if( [ tableView.identifier isEqualToString: @"Albums" ] )
     {
         self.tracks = [ self.allTracks filteredArrayUsingPredicate: [ NSPredicate predicateWithBlock: artistFilter ] ];
-        self.tracks = [ self.tracks filteredArrayUsingPredicate: [ NSPredicate predicateWithBlock: albumFilter ] ];
+        self.tracks = [ self.tracks    filteredArrayUsingPredicate: [ NSPredicate predicateWithBlock: albumFilter ] ];
         
         self.tracksController.selectionIndexes = [ NSIndexSet indexSet ];
     }
